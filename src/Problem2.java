@@ -2,30 +2,44 @@
 public class Problem2 {
 
 	/**
+	 * By considering the terms in the Fibonacci sequence whose values 
+	 * do not exceed four million, find the sum of the even-valued terms.
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		int i = 1;
-		int j = 2;
-		System.out.println(i);
-		System.out.println(j);
+		Integer firstFibonacciTerm = 1;
+		Integer secondFibonacciTerm = 2;
+		final Integer termValueLimit = 4000000;
+		Integer nextFibonacciTerm = 0;
+		Integer evenSum = 0;
+		System.out.println(firstFibonacciTerm);
+		System.out.println(secondFibonacciTerm);
 
-		int temp = i + j;
-		int evenSum = j;
-		while (temp < 4000000){
-			System.out.println(temp);
-			i = j;
-			j = temp;	
-			if ( (i+j) > 4000000){
+		if (isEven(firstFibonacciTerm)){
+			evenSum = evenSum + firstFibonacciTerm; 
+		}
+		if (isEven(secondFibonacciTerm)){
+			evenSum = evenSum + secondFibonacciTerm; 
+		}
+		while (nextFibonacciTerm < termValueLimit){
+			nextFibonacciTerm = firstFibonacciTerm + secondFibonacciTerm;
+			System.out.println(nextFibonacciTerm);
+
+			if (isEven(nextFibonacciTerm)){
+				evenSum = evenSum + nextFibonacciTerm; 
+			}
+			firstFibonacciTerm = secondFibonacciTerm;
+			secondFibonacciTerm = nextFibonacciTerm;	
+			if ( (firstFibonacciTerm + secondFibonacciTerm) > termValueLimit){
 				break;
 			}
-			temp = i + j;
-				if (temp > 2 && (temp % 2 ) == 0){
-					evenSum = evenSum + temp; 
-				}
 		}
 		System.out.println("Even sum = " + evenSum);
+	}
+
+	static boolean isEven(Integer fibonacciTwoTermSum) {
+		final Integer two = 2;
+		return fibonacciTwoTermSum % two == 0;
 	}
 
 }
