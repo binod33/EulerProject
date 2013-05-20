@@ -1,56 +1,53 @@
-
+/**
+ * Find the largest palindrome made from the product of two 3-digit numbers.
+ * @author Binod KC
+ * @author Erik Johnson
+ *
+ */
 public class Problem4 {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
-		int highest = 0;
-		for (int i = 100; i <=999; i++){
-			for (int j = 100 ; j <= 999; j++){
-				int product = i * j;
-				String number = product+"";
-				int length = number.length();
-				if (length % 2 == 0){
-					int k = 0;
-					boolean palindrome = true;
-					while (k < (length/2)){
-						if (number.charAt(k) != number.charAt(length-1-k)){
-							palindrome  = false;
-							break;
-						}
-						k = k+1;
-					}
-					if (!palindrome){
-						continue;
-					}
-				}
-				else {
-					int k = 0;
-					boolean palindrome = true;
-					while (k <= (length/2)){
-						if (number.charAt(k) != number.charAt(length-1-k)){
-							palindrome  = false;
-							break;
-						}
-						else {
-						}
-						k = k+1;
+		final Integer largestPalindrome = findLargestPalindrome();
+		System.out.println("Largest palindrome from multiplying 2 three digit numbers is " + largestPalindrome);
+	}
 
-					}
-					if (!palindrome){
-						continue;
-					}				
+	private static Integer findLargestPalindrome() {
+		final Integer smallestThreeDigitNumber = 100;
+		final Integer largestThreeDigitNumber = 999;
+		Integer largestPalindrome = 0;
+		for (Integer firstThreeDigitInt = smallestThreeDigitNumber; firstThreeDigitInt <= largestThreeDigitNumber; firstThreeDigitInt++) {
+			for (Integer secondThreeDigitInt = smallestThreeDigitNumber; secondThreeDigitInt <= largestThreeDigitNumber; secondThreeDigitInt++){
+				Integer product = firstThreeDigitInt * secondThreeDigitInt;
+				if (!isPalindrome(product)){
+					continue;
 				}
-				if (Integer.parseInt(number) > highest){
-					highest = Integer.parseInt(number);
+				else if (product > largestPalindrome){
+					largestPalindrome = product;
 				}
-
 			}
-
 		}
-		System.out.println("Highest palindrome from multiplying 2 three digit numbers is " + highest);
+		return largestPalindrome;
+	}
 
+	private static Boolean isPalindrome(Integer possiblePalindrome) {
+		final String productString = Integer.toString(possiblePalindrome);
+		final Integer productLength = productString.length();
+		final Integer lastProductChar = productLength-1;
+		final Double middleOfProduct = productLength/2.0;
+		Integer characterIndex = 0;
+		Boolean palindrome = true;
+		Character leftChar;
+		Character rightChar;
+		while (characterIndex <= middleOfProduct) {
+			leftChar = productString.charAt(characterIndex);
+			rightChar = productString.charAt(lastProductChar-characterIndex);
+			if (!leftChar.equals(rightChar)){
+				palindrome  = false;
+				break;
+			}
+			characterIndex++;
+		}
+		return palindrome;
 	}
 
 }
