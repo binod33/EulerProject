@@ -36,7 +36,7 @@ TODO
 
 #### Encryption Version "THREE"
 
-A new version of encryption “THREE” is introduced in Iara 3.0. It uses AES encryption with Cipher Block Chaining (CBC) mode along with PKCS5 Padding to encrypt and decrypt credentials from the key management database. Old credentials will continue using old encryption/decryption methods. New credentials introduced to the key management database will start using the new version for encryption and decryption.
+A new version of encryption “THREE” is introduced in Iara 3.0. It uses AES encryption with Cipher-Block Chaining (CBC) mode along with PKCS5 Padding to encrypt and decrypt credentials from the key management database. Old credentials will continue using old encryption/decryption methods. New credentials introduced to the key management database will start using the new version for encryption and decryption.
 
 #### Encryption Version in License Keys
 
