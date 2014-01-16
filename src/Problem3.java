@@ -47,11 +47,13 @@ public class Problem3 {
 	}
 
 	private static Boolean checkPrime(Long possiblePrime) {
-		if (possiblePrime == 2){
+		Integer lowestEvenNumber = 2;
+		Integer nothing = 0;
+		if (possiblePrime == lowestEvenNumber){
 			return true;
 		}
-		for (Integer iterator = 2; iterator < possiblePrime; iterator++){
-			if (possiblePrime % iterator == 0){
+		for (Integer iterator = lowestEvenNumber; iterator < possiblePrime; iterator++){
+			if (possiblePrime % iterator == nothing){
 				return false;
 			}
 		}
@@ -60,7 +62,8 @@ public class Problem3 {
 
 	private static Boolean checkFactor(Long possibleFactor) {
 		Boolean isFactor;
-		if (factorThisNumber % possibleFactor == 0) {
+		Integer nothing = 0;
+		if (factorThisNumber % possibleFactor == nothing) {
 			isFactor = true;
 		}
 		else {
