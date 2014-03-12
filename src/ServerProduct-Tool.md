@@ -119,7 +119,7 @@ Should represent the DCM id of the cloud that requires server product pricing up
 Should represent the JSON data source. It can either be  a URL of the JSON file or a file containing multiple URLs or a local filepath of the JSON file.
 
 ### Read from a URL
-The tool can read and parse out products from a URL of the JSON file. It is acheived by the <code>"-u"</code> option. This option requres an argument. 
+The tool can read and parse out products from a URL of the JSON file. It is acheived by the <code>"-u"</code> option with the URL as the argument.
 
 Usage example :
 ```
