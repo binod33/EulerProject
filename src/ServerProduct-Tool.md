@@ -275,6 +275,6 @@ Will update server product [3020/m3.xlarge/x86_64/Windows/us-east-1]  : Changes 
 Add count    : 4
 Update count : 2
 
-Created file 'vmproducts-custom.json'. Please copy this file to /services/dispatcher/resources/org/dasein/cloud/aws/ directory to update the drop down list of the server products in the server launch form.
+Created file 'vmproducts-custom.json'. Please copy this file to /services/dispatcher/resources/org/dasein/cloud/aws/ directory and restart dispatcher in order to update the drop down list of the server products in the server launch form.
 ```
 
