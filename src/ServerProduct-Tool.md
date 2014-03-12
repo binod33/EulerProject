@@ -112,14 +112,14 @@ This tool parses out pricing data for instances from a JSON file. Here is the sc
 
 ### Cloud ID
 
-Should represent the DCM id of the cloud that requires server product pricing update. It is represented by <code>"-c"<code> option that takes in required <code>LONG<code> type argument. 
+Should represent the DCM id of the cloud that requires server product pricing update. It is represented by <code>"-c"</code> option that takes in required <code>LONG</code> type argument. 
 
 ## Source parameter
 
 Should represent the JSON data source. It can either be  a URL of the JSON file or a file containing multiple URLs or a local filepath of the JSON file.
 
 ### Read from a URL
-The tool can read and parse out products from a URL of the JSON file. It is acheived by the <code>"-u"<code> option. This option requres an argument. 
+The tool can read and parse out products from a URL of the JSON file. It is acheived by the <code>"-u"</code> option. This option requres an argument. 
 
 Usage example :
 ```
@@ -141,7 +141,7 @@ Update count : 1
 ```
 
 ### Read from a file containing URLS
-The tool can also read from multiple URLs at the same time. Create a file containing just the URLS in each line and then specify the path of the file using the option <code>"-m"<code>.
+The tool can also read from multiple URLs at the same time. Create a file containing just the URLS in each line and then specify the path of the file using the option <code>"-m"</code>.
 
 Usage example:
 ```
@@ -188,7 +188,7 @@ Update count : 2
 ```
 
 ### Read directly from a JSON file
-The tool can read data out directly from a JSON file by specifying it's path as an argument when using <code>"-f"<code> option.
+The tool can read data out directly from a JSON file by specifying it's path as an argument when using <code>"-f"</code> option.
 
 Usage example :
 ```
@@ -216,7 +216,7 @@ Update count : 0
 ## Optional parameters
 
 ### Dry-run
-The Dry-run feature of the tool will list out the new server products will be created/updated during the sync but will not commit to the DCM database. It is highly advised to run this tool using a <code>"--dryrun"<code> option first before actullly commiting to the changes in the database.
+The Dry-run feature of the tool will list out the new server products will be created/updated during the sync but will not commit to the DCM database. It is highly advised to run this tool using a <code>"--dryrun"</code> option first before actullly commiting to the changes in the database.
 
 Usage example :
 
