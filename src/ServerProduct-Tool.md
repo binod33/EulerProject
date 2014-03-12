@@ -216,7 +216,7 @@ Update count : 0
 ## Optional parameters
 
 ### Dry-run
-The Dry-run feature of the tool will list out the new server products will be created/updated during the sync but will not commit to the DCM database. It is highly advised to run this tool using a <code>"--dryrun"</code> option first before actullly commiting to the changes in the database.
+The dry-run feature of the tool will list out the new server products that will be created/updated during the sync but will not commit to the DCM database. It is highly advised to run this tool using the option <code>"--dryrun"</code> first, before commiting to the changes in the database.
 
 Usage example :
 
