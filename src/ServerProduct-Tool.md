@@ -128,8 +128,8 @@ Cloud Id     : 1
 URL          : http://aws-assets-pricing-prod.s3.amazonaws.com/pricing/ec2/linux-od.js
 URL filepath : null
 Filepath     : null
-Dry-run      : true
-PrintJsonFile: true
+Dry-run      : false
+PrintJsonFile: false
 
 Created server product [ m3.medium [3.75 GB memory/4 GB storage/3 Compute Units]/i386/Generic Unix/]
 
@@ -159,8 +159,8 @@ Cloud Id     : 1
 URL          : null
 URL filepath : /services/monitor/sbin/productUrls
 Filepath     : null
-Dry-run      : true
-PrintJsonFile: true
+Dry-run      : false
+PrintJsonFile: false
 
 
 Reading from file : /services/monitor/sbin/productUrls
@@ -197,8 +197,8 @@ Cloud Id     : 1
 URL          : null
 URL filepath : null
 Filepath     : /services/monitor/sbin/jsonFile.json
-Dry-run      : true
-PrintJsonFile: true
+Dry-run      : false
+PrintJsonFile: false
 
 
 Reading from file : /services/monitor/sbin/jsonFile.json
@@ -227,7 +227,7 @@ URL          : null
 URL filepath : null
 Filepath     : /services/monitor/sbin/jsonFile.json
 Dry-run      : true
-PrintJsonFile: true
+PrintJsonFile: false
 
 
 Reading from file : /services/monitor/sbin/jsonFile.json
