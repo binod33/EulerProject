@@ -192,7 +192,7 @@ The tool can read data out directly from a JSON file by specifying it's path as 
 
 Usage example :
 ```
-root@vagrant:/services/monitor/sbin# ./serverproduct-tool.sh -c1 -f/services/monitor/sbin/jsonFile.json --dryrun --printJSON 
+root@vagrant:/services/monitor/sbin# ./serverproduct-tool.sh -c1 -f/services/monitor/sbin/jsonFile.json 
 Cloud Id     : 1
 URL          : null
 URL filepath : null
