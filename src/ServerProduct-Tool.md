@@ -30,9 +30,9 @@ Options:
 
 ```
 
-## Required JSON schema
+## Expected JSON schema
 
-This tool parses out pricing data for instances from a JSON file. Here is an example schema of the required JSON file.
+This tool parses out pricing data for instances from a JSON file. Here is an example schema of the expected JSON file.
 
 ```
 {
