@@ -1,7 +1,7 @@
 ## ServerProduct-Tool
 ServerProduct-Tool is a mutlinode backend sbin tool that allows you sync cloud server product pricing with DCM. This tool can add new server products if absent in DCM and update existing DCM server product's pricing with the latest from the  source file but it WILL NOT DELETE existing server products.
 
-## Usage
+### Usage :
 
 ```
 root@vagrant:/services/monitor/sbin# ./serverproduct-tool.sh -h
