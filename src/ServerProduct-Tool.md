@@ -1,5 +1,5 @@
 ## Server Product Tool
-Server Product Tool is a mutlinode backend sbin tool that allows you sync cloud server product pricing with DCM. This tool can add new server products if absent in DCM and update existing DCM server product's pricing with the latest from the  source file but it WILL NOT DELETE existing server products.
+Server Product Tool is a multinode backend sbin tool that allows you sync cloud server product pricing with DCM. This tool can add new server products if absent in DCM and update existing DCM server product's pricing with the latest from the  source file but it WILL NOT DELETE existing server products.
 
 ### Usage :
 
