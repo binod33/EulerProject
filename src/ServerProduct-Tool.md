@@ -131,7 +131,7 @@ Filepath     : null
 Dry-run      : false
 PrintJsonFile: false
 
-Created server product [ m3.medium [3.75 GB memory/4 GB storage/3 Compute Units]/i386/Generic Unix/]
+Created server product [200/m3.medium [3.75 GB memory/4 GB storage/3 Compute Units]/i386/Generic Unix/]
 
 Updated server product [3018/m3.xlarge/x86_64/Generic Unix/us-east-1]  : Changes : {"standardPricingCurrency":{"new":0.45,"old":0.5}}
 
@@ -172,12 +172,12 @@ Extracting data from url : http://aws-assets-pricing-prod.s3.amazonaws.com/prici
 Extracting data from url : http://aws-assets-pricing-prod.s3.amazonaws.com/pricing/ec2/mswinSQL-od.js
 Extracting data from url : http://aws-assets-pricing-prod.s3.amazonaws.com/pricing/ec2/mswinSQLWeb-od.js
 
-Created server product [ m3.medium [3.75 GB memory/4 GB storage/3 Compute Units]/i386/Generic Unix/] 
-Created server product [ m3.medium [3.75 GB memory/4 GB storage/3 Compute Units]/i386/Windows/]
-Created server product [ m3.medium [3.75 GB memory/4 GB storage/3 Compute Units]/i386/Red Hat/] 
-Created server product [ m3.medium [3.75 GB memory/4 GB storage/3 Compute Units]/i386/SUSE/]
-Created server product [ m3.medium [3.75 GB memory/4 GB storage/3 Compute Units]/i386/Windows/Standard SQL] 
-Created server product [ m3.medium [3.75 GB memory/4 GB storage/3 Compute Units]/i386/Windows/Web SQL] 
+Created server product [201/m3.medium [3.75 GB memory/4 GB storage/3 Compute Units]/i386/Generic Unix/] 
+Created server product [202/m3.medium [3.75 GB memory/4 GB storage/3 Compute Units]/i386/Windows/]
+Created server product [204/m3.medium [3.75 GB memory/4 GB storage/3 Compute Units]/i386/Red Hat/] 
+Created server product [205/m3.medium [3.75 GB memory/4 GB storage/3 Compute Units]/i386/SUSE/]
+Created server product [206/m3.medium [3.75 GB memory/4 GB storage/3 Compute Units]/i386/Windows/Standard SQL] 
+Created server product [207/m3.medium [3.75 GB memory/4 GB storage/3 Compute Units]/i386/Windows/Web SQL] 
 
 Updated server product [7074/t1.micro/x86_64/Generic Unix/sa-east-1]  : Changes : {"standardPricingCurrency":{"new":0.027,"old":0.007}}
 Updated server product [3020/m3.xlarge/x86_64/Windows/us-east-1]  : Changes : {"standardPricingCurrency":{"new":0.702,"old":0.78}}
@@ -203,9 +203,9 @@ PrintJsonFile: false
 
 Reading from file : /services/monitor/sbin/jsonFile.json
 
-Created server product [ m3.medium [3.75 GB memory/4 GB storage/3 Compute Units]/i386/Generic Unix/] 
-Created server product [ m3.medium [3.75 GB memory/4 GB storage/3 Compute Units]/x86_64/Generic Unix/] 
-Created server product [ m3.medium [3.75 GB memory/4 GB storage/3 Compute Units]/i386/Generic Unix/] 
+Created server product : [1/m3.medium [3.75 GB memory/4 GB storage/3 Compute Units]/i386/Generic Unix/us-east-1/]
+Created server product : [200/m3.medium [3.75 GB memory/4 GB storage/3 Compute Units]/x86_64/Generic Unix/us-east-1/]
+Created server product : [201/m3.medium [3.75 GB memory/4 GB storage/3 Compute Units]/i386/Generic Unix/us-west-2/]
 
 
 Add count    : 3
