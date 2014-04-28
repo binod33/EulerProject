@@ -239,7 +239,7 @@ Updating ApiKeys encryption for customer :Enstratius Inc. [#200]
 
      Processing key : 104
           New Encrypted keys : [c05552c01....]
-          Updated keys for key pair104
+          Updated keys for key pair 104
 
 Updating Relational Database encryption for customer :Enstratius Inc. [#200]
 Updating Server password encryption for customer :Enstratius Inc. [#200]
@@ -251,12 +251,12 @@ Updating Cloud Account encryption for customer :Enstratius Inc. [#200]
 
      Processing key : 102
           New Encrypted keys : [ac1236819....]
-          Updated keys for key pair102
+          Updated keys for key pair 102
 
 
      Processing key : 101
           New Encrypted keys : [afc78e9cf....]
-          Updated keys for key pair101
+          Updated keys for key pair 101
 
 Updating Block Volume encryption for customer :Enstratius Inc. [#200]
 Updating Enstratus user encryption for customer :Enstratius Inc. [#200]
