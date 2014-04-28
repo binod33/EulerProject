@@ -1,5 +1,5 @@
 ## Key Management Tool
-Key Management Tool is a multinode backend sbin tool that allows a admin user to re-encrypt the keys in the key management database with a new encryption key. This tool touches sensitive components of the DCM system and should be used with caution. It is advised to carry out the dry-run before commiting to the changes in keys. This tool has support for DCM J.4 and above only.
+Key Management Tool is a multinode backend sbin tool that will allow an admin user manage DCM keys in the key management database. This tool touches sensitive components of the DCM system and should be used with caution. It is highly advised that any command under this tool should be carried out only after a successful dry-run of that command operation before commiting to the changes in key management database. 
 
 ### Usage :
 
@@ -24,7 +24,7 @@ Option         Description
 ## Command
 ### Update [<code>update</code>]
 
-A command recognized by the key management tool that performs encryption key updates on existing keypairs inside the key management database by decrypting using the exsiting encryption key and re-encrypting them using the new encryption key. Make sure all the services are stopped before executing the update command opeartion. (Mandatory : Dispatcher and Backend service). The update command iterates through the resources of the customer and then uses the key-pair id references in those resources to extract the key-pairs from the key management database for update. Here is the list of the entities/resources that are updated by this command.
+A command recognized by the key management tool that performs encryption key updates on existing keypairs inside the key management database by decrypting them using the exsiting encryption key and re-encrypting them using the new encryption key. Make sure all the services are stopped before executing the update command opeartion. (Mandatory : Dispatcher and Backend service). The update command iterates through the resources of the customer and then updates the key-pairs created by those resources in the key management database. Here are the list of the entities/resources whose key-pairs are updated by the update command.
 
 ```
 Account Accesses
@@ -45,7 +45,7 @@ SSL Certificates
 
 ```
 
-Once the command has been run make sure to update the encryption key in the following files.
+Once the command has been run make sure to update the encryption key references in the following files with the new encryption key.
 
 ```
 /services/backend/resources/enstratus-provisioning.cfg
@@ -61,10 +61,10 @@ Displays the usage, available commands and options of the tool.
 
 ### Dry-run [<code>-d, --dryrun</code>]
 
-Perform a dry-run of the key management command operations. Running the tool in a dry-run mode will not commit any changes to the database. It is a good way to verify that the opertaion in use can perform key management operations such as encrypting and decrypting keys without any complications. It is highly advised to initially perform a dry-run of the command opertaion.
+Perform a dry-run of the key management command operations. Running the tool in a dry-run mode will not commit any changes to the database. It is a good way of verifying a command opertaion in use can perform key management operations such as encrypting and decrypting keys without any complications. It is highly advised to initially perform a dry-run of command opertaions.
 
 ### Read from a file [<code>-f \<filePath></code>]
-A valid and mandatory option for the update command of the tool that reads and parses out the new encryption key from a file. It will parse out the first line of the file as the new encryption key.
+A valid and mandatory option for the update command of the tool that reads and parses out the new encryption key from the specified file path. It will parse out the first line of the file as the new encryption key.
 
 Usage example :
 
@@ -106,7 +106,7 @@ Complete (Dry-run)
 ```
 
 ### Read from a file with prop key [<code>-p \[propkey]</code>]
-An option for the update command of the tool that reads and parses out the encryption key from the file using the argument specified property key.
+An option for the update command of the tool that reads and parses out the encryption key from the file using the specified property key. Not specifying any argument will default back to parsing out the first line from the file as an ecnryption key.
 
 Usage example :
 
@@ -150,7 +150,7 @@ Complete (Dry-run)
 ### Verbose [<code>-v</code>]
 Run the selected command operation in verbose mode.
 
-Usage Example :
+Usage Example 1 :
 
 ```
 root@vagrant:/services/backend/sbin# ./keymanagement-tool.sh update -d -f keyFile -p newKey -v
@@ -168,7 +168,6 @@ New encryption key  : !@@##%$%^&%^&$###$%
 Will update ApiKeys encryption for customer :Enstratius Inc. [#200]
 
      Processing key : 104
-          Decrypted keys     : [1HUT+DorT....]
           New Encrypted keys : [6b0deb198....]
           Will update keys for key pair 104
 
@@ -181,13 +180,11 @@ Will update Region Encryption for customer :Enstratius Inc. [#200]
 Will update Cloud Account encryption for customer :Enstratius Inc. [#200]
 
      Processing key : 102
-          Decrypted keys     : [DmkzqQTIj....]
           New Encrypted keys : [6de015ab4....]
           Will update keys for key pair 102
 
 
      Processing key : 101
-          Decrypted keys     : [DmkzqQTIj....]
           New Encrypted keys : [d17560efa....]
           Will update keys for key pair 101
 
@@ -195,13 +192,11 @@ Will update Block Volume encryption for customer :Enstratius Inc. [#200]
 Will update Enstratus user encryption for customer :Enstratius Inc. [#200]
 
      Processing key : 105
-          Decrypted keys     : [SIt3liO8k....]
           New Encrypted keys : [04de9d6c8....]
           Will update keys for key pair 105
 
 
      Processing key : 106
-          Decrypted keys     : [, 200]
           New Encrypted keys : [d87f50ad9....]
           Will update keys for key pair 106
 
@@ -222,6 +217,65 @@ Will update encryption for customer : Enstratius Inc. [#200](Dry-run)
 
 Complete (Dry-run)
 
+```
+
+Usage Example 2 (with dry-run set to false):
+
+```
+root@vagrant:/services/backend/sbin# ./keymanagement-tool.sh updateEncryption  -v -f keyFile -p newKey
+
+Reading encryption key from file : testFile
+
+=====================================
+Dry-run             : false
+Verbose             : true
+File                : keyFile
+PropKey             : newKey
+New encryption key  : !@@##%$%^&%^&$###$%
+=====================================
+
+
+Updating ApiKeys encryption for customer :Enstratius Inc. [#200]
+
+     Processing key : 104
+          New Encrypted keys : [c05552c01....]
+          Updated keys for key pair104
+
+Updating Relational Database encryption for customer :Enstratius Inc. [#200]
+Updating Server password encryption for customer :Enstratius Inc. [#200]
+Updating DataSource encryption for customer :Enstratius Inc. [#200]
+Updating Service encryption for customer :Enstratius Inc. [#200]
+Updating SSL certificate encryption for customer :Enstratius Inc. [#200]
+Updating Region Encryption for customer :Enstratius Inc. [#200]
+Updating Cloud Account encryption for customer :Enstratius Inc. [#200]
+
+     Processing key : 102
+          New Encrypted keys : [ac1236819....]
+          Updated keys for key pair102
+
+
+     Processing key : 101
+          New Encrypted keys : [afc78e9cf....]
+          Updated keys for key pair101
+
+Updating Block Volume encryption for customer :Enstratius Inc. [#200]
+Updating Enstratus user encryption for customer :Enstratius Inc. [#200]
+Updating Account Access encryption for customer :Enstratius Inc. [#200]
+Updating Customer SMS Config encryption for customer :Enstratius Inc. [#200]
+Updating Configuration Management encryption for customer :Enstratius Inc. [#200]
+Updating Launch Configuration encryption for customer :Enstratius Inc. [#200]
+Updating customer management keys and wsAccess keys for customer :Enstratius Inc. [#200]
+
+     New encrypted management key : [43c0a....]
+     New encrypted wsAccess key   : [c282f....]
+
+Updated encryption for customer : Enstratius Inc. [#200]
+
+
+=====================================================================================
+
+
+Complete 
 ```
 
 
