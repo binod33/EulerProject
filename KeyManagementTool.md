@@ -1,5 +1,5 @@
 ## Key Management Tool
-Key Management Tool is a multinode backend sbin tool that will allow an admin user manage DCM keys in the key management database. This tool touches sensitive components of the DCM system and should be used with caution. It is highly advised that any command under this tool should be carried out only after a successful dry-run of that command operation.
+Key Management Tool is a multinode backend sbin tool that will allow an admin user to manage DCM keys in the key management database. This tool touches sensitive components of the DCM system and should be used with caution. It is highly advised that any command performed by this tool should be carried out only after a successful dry-run of that command. This will allow you to validate all operations before commiting the changes to the key management database. 
 
 ### Usage :
 
@@ -24,7 +24,7 @@ Option         Description
 ## Command
 ### Update [<code>update</code>]
 
-A command recognized by the key management tool that performs encryption key updates on existing keypairs inside the key management database by decrypting them using the exsiting encryption key and re-encrypting them using the new encryption key. Make sure all the services are stopped before executing the update command opeartion. (Mandatory : Dispatcher and Backend service). The update command iterates through the resources of the customer and then updates the key-pairs created by those resources in the key management database. Here are the list of the entities/resources whose key-pairs are updated by the update command.
+A command recognized by the key management tool that performs encryption key updates on existing keypairs inside the key management database by decrypting them using the exsiting encryption key and re-encrypting them using the new encryption key. Make sure all the services are stopped before executing the update command opeartion. (Mandatory : Dispatcher and Backend service). The update command iterates through the customer's resources and then updates the key-pairs created for those resources in the key management database. Here is the list of the entities/resources whose key-pairs are updated by the update command.
 
 ```
 Account Accesses
@@ -45,7 +45,7 @@ SSL Certificates
 
 ```
 
-Once the command has been run make sure to update the encryption key references in the following files with the new encryption key.
+Once the command has been run be sure to update the encryption key references in the following files with the new encryption key.
 
 ```
 /services/backend/resources/enstratus-provisioning.cfg
@@ -61,7 +61,7 @@ Displays the usage, available commands and options of the tool.
 
 ### Dry-run [<code>-d, --dryrun</code>]
 
-Perform a dry-run of the key management command operations. Running the tool in a dry-run mode will not commit any changes to the database. It is a good way of verifying a command opertaion in use can perform key management operations such as encrypting and decrypting keys without any complications. It is highly advised to initially perform a dry-run of command opertaions.
+Perform a dry-run of the key management command operations. Running the tool in a dry-run mode will not commit any changes to the database. It is a good way to verify that a command will be able to perform key management operations such as encrypting and decrypting keys without any complications. It is highly advised to initially perform a dry-run of command opertaions.
 
 ### Read from a file [<code>-f \<filePath></code>]
 A valid and mandatory option for the update command of the tool that reads and parses out the new encryption key from the specified file path. It will parse out the first line of the file as the new encryption key.
