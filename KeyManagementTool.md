@@ -24,7 +24,7 @@ Option         Description
 ## Command
 ### Update [<code>update</code>]
 
-A command recognized by the key management tool that performs encryption key updates on existing keypairs inside the key management database by decrypting them using the exsiting encryption key and re-encrypting them using the new encryption key. Make sure all the services are stopped before executing the update command operation. (Mandatory : Dispatcher and Backend service). The update command iterates through the customer's resources and then updates the key-pairs created for those resources in the key management database. Here is the list of the entities/resources whose key-pairs are updated by the update command.
+A command recognized by the key management tool that performs encryption key updates on existing key-pairs inside the key management database by decrypting them using the existing encryption key and re-encrypting them using the new encryption key. Make sure all the services are stopped before executing the update command operation. (Mandatory : Dispatcher and Backend service). The update command iterates through the customer's resources and then updates the key-pairs created for those resources in the key management database. Here is the list of the entities/resources whose key-pairs are updated by the update command.
 
 ```
 Account Accesses
