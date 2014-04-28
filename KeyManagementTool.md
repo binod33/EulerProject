@@ -1,5 +1,5 @@
 ## Key Management Tool
-Key Management Tool is a multinode backend sbin tool that will allow an admin user manage DCM keys in the key management database. This tool touches sensitive components of the DCM system and should be used with caution. It is highly advised that any command under this tool should be carried out only after a successful dry-run of that command operation before commiting to the changes in key management database. 
+Key Management Tool is a multinode backend sbin tool that will allow an admin user manage DCM keys in the key management database. This tool touches sensitive components of the DCM system and should be used with caution. It is highly advised that any command under this tool should be carried out only after a successful dry-run of that command operation.
 
 ### Usage :
 
